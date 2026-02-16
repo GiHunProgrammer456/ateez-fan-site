@@ -91,7 +91,7 @@
   font-size: 1.4rem;
   font-weight: 900;
   letter-spacing: 4px;
-  color: var(--color-primary);
+  color: #ffffff;
 }
 
 .nav {
@@ -169,7 +169,7 @@
   width: 80vw;
   margin: 0 auto 24px;
   display: block;
-  filter: brightness(1.1);
+  filter: invert(1);
 }
 
 .hero-group-photo {

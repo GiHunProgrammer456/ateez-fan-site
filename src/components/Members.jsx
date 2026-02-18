@@ -225,7 +225,6 @@ function MemberModal({ member, onClose }) {
 
 function Members() {
   const [selectedMember, setSelectedMember] = useState(null)
-
   return (
     <section className="members" id="members">
       <div className="container">

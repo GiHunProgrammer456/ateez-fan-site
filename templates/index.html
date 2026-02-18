@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATEEZ — 8 Makes 1 Team</title>
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- ANITEEZ Side Characters -->
+  <div class="side-characters side-left">
+    {% for c in left_characters %}
+    <div class="side-char">
+      <img src="{{ c.src }}" alt="{{ c.name }}">
+      <span class="side-char-name">{{ c.name }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="side-characters side-right">
+    {% for c in right_characters %}
+    <div class="side-char">
+      <img src="{{ c.src }}" alt="{{ c.name }}">
+      <span class="side-char-name">{{ c.name }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo"><img src="/images/logo.png" alt="ATEEZ" class="header-logo-img"></a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="#members">Members</a>
+        <a href="#discography">Discography</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <img src="/images/logo.png" alt="ATEEZ" class="hero-logo-img">
+        <p class="hero-tag">A TEEnager Z</p>
+        <p class="hero-subtitle">
+          8 Makes 1 Team. From KQ Entertainment, conquering the world stage since October 24, 2018.
+          Known for their explosive performances and the TREASURE / FEVER / THE WORLD storyline series.
+        </p>
+        <div class="hero-buttons">
+          <a href="#members" class="btn btn-primary">Meet the Members</a>
+          <a href="#discography" class="btn btn-secondary">Discography</a>
+        </div>
+        <img src="/images/group.jpeg" alt="ATEEZ Group" class="hero-group-photo">
+      </div>
+    </section>
+
+    <!-- Members -->
+    <section class="members" id="members">
+      <div class="container">
+        <h2 class="section-title">The Members</h2>
+        <p class="section-subtitle">
+          Click on any member to see their full profile and era history.
+        </p>
+        <div class="members-grid">
+          {% for member in members %}
+          <div class="member-card" style="--member-color: {{ member.color }}" data-index="{{ loop.index0 }}">
+            <div class="member-photo-wrap">
+              <img src="{{ member.photo }}" alt="{{ member.name }}" class="member-photo" loading="lazy">
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">
+                {{ member.name }} <span class="member-hangul">{{ member.hangul }}</span>
+              </h3>
+              <p class="member-role">{{ member.role }}</p>
+              <p class="member-birthday">{{ member.birthday }}</p>
+              <p class="member-facts">{{ member.facts }}</p>
+              <span class="member-click-hint">Click for full profile</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Discography -->
+    <section class="discography" id="discography">
+      <div class="container">
+        <h2 class="section-title">Discography</h2>
+        <p class="section-subtitle">
+          A journey through ATEEZ's musical evolution — from TREASURE to GOLDEN HOUR. Click any album for the full tracklist.
+        </p>
+        <div class="albums-grid">
+          {% for album in albums %}
+          <div class="album-card" data-index="{{ loop.index0 }}">
+            <div class="album-cover-wrap">
+              <img src="{{ album.cover }}" alt="{{ album.title }}" class="album-cover" loading="lazy">
+              <div class="album-cover-overlay">
+                <span class="album-view-btn">View Tracklist</span>
+              </div>
+            </div>
+            <div class="album-info">
+              <div class="album-year">{{ album.year }}</div>
+              <h3 class="album-title">{{ album.title }}</h3>
+              <span class="album-type">{{ album.type }}</span>
+              <p class="album-title-track">
+                Title: {{ album.titleTrack }}
+              </p>
+              <p class="album-track-count">{{ album.tracks|length }} tracks</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="about-content">
+          <h2 class="section-title">About ATEEZ</h2>
+          <p>
+            ATEEZ (Korean: 에이티즈) is a South Korean boy group formed by KQ Entertainment in 2018.
+            The name stands for "A TEEnager Z" — meaning teenagers from A to Z who embrace everything.
+          </p>
+          <p>
+            Known for their powerful performances, captivating storylines, and incredible stage presence,
+            ATEEZ has risen to become one of the biggest 4th generation K-pop groups, selling millions
+            of albums and performing in arenas worldwide.
+          </p>
+          <p>
+            Their fandom is called ATINY (ATEEZ + Destiny), representing the destined bond
+            between the group and their fans.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">8</span>
+              <span class="stat-label">Members</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">2018</span>
+              <span class="stat-label">Debut Year</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10M+</span>
+              <span class="stat-label">Albums Sold</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">ATINY</span>
+              <span class="stat-label">Fandom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">ATEEZ</a>
+        <p>8 Makes 1 Team</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="#members">Members</a>
+          <a href="#discography">Discography</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Official</h4>
+          <a href="https://www.youtube.com/@ATEEZofficial" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://x.com/ATEEZofficial" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="https://www.instagram.com/ateez_official_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="https://open.spotify.com/artist/68KmkJeZGfwe1OUaivBa2L" target="_blank" rel="noopener noreferrer">Spotify</a>
+          <a href="https://www.tiktok.com/@ateez_official_" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.vlive.tv/channel/C2D78B" target="_blank" rel="noopener noreferrer">V LIVE</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>Fan site. Not affiliated with KQ Entertainment or ATEEZ.</p>
+    </div>
+  </footer>
+
+  <!-- Data for JS modals -->
+  <script id="members-data" type="application/json">{{ members_json|safe }}</script>
+  <script id="albums-data" type="application/json">{{ albums_json|safe }}</script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

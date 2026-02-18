@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="header">
       <div className="container header-inner">
-        <a href="#" className="logo">ATEEZ</a>
+        <a href="#" className="logo"><img src="/images/logo.png" alt="ATEEZ" className="header-logo-img" /></a>
         <button
           className={`menu-toggle ${menuOpen ? 'active' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}

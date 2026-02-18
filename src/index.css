@@ -10,14 +10,14 @@
   --color-bg: #000000;
   --color-surface: #0a0a0a;
   --color-surface-2: #111111;
-  --color-text: #f2f2f5;
-  --color-text-muted: #8e8e9a;
+  --color-text: #ffffff;
+  --color-text-muted: #a0a0ad;
   --color-primary: #e11d48;
   --color-primary-light: #fb7185;
   --color-accent: #be123c;
   --color-gold: #d4a853;
   --color-border: #22222e;
-  --max-width: 1120px;
+  --max-width: 1320px;
   --radius: 12px;
 }
 
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   background-color: #000;
   color: var(--color-text);
   line-height: 1.6;
@@ -45,11 +45,11 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  border: 2px solid rgba(168, 85, 247, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   box-shadow:
-    inset 0 0 15px rgba(168, 85, 247, 0.25),
-    0 0 25px rgba(168, 85, 247, 0.25),
-    0 0 60px rgba(168, 85, 247, 0.1);
+    inset 0 0 15px rgba(255, 255, 255, 0.2),
+    0 0 25px rgba(255, 255, 255, 0.2),
+    0 0 60px rgba(255, 255, 255, 0.08);
   animation: neonPulse 4s ease-in-out infinite;
   will-change: opacity;
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 25%, transparent 100%);
